@@ -1,52 +1,36 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+		<!-- <test :msg="msg" @testShowName="testEvent" /> -->
+		<text>我是首页</text>
+		<view>{{ 'abc'.indexOf('ab') === -1 ? 'yes' : 'no' }}</view>
+		<image src="../../static/logo.png" mode=""></image>
 	</view>
 </template>
 
 <script>
+	import test from '../../components/test.vue'
+	
 	export default {
+		components: {
+			test
+		},
 		data() {
 			return {
-				title: 'Hello uni-app'
+				msg: 'I am test'
 			}
 		},
 		onLoad() {
-
+			// uni.$once('testEmit', (e) => {
+			// 	console.log(e)
+			// })
 		},
 		methods: {
-
+			// testEvent(e) {
+			// 	console.log(e)
+			// }
 		}
 	}
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 </style>
